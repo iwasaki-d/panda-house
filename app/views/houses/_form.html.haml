@@ -15,7 +15,7 @@
       .house-input-clear
     .form-group.house-input-margin
       = f.input :remark, as: :text, label: t('house.remark')
-    %hr.house-input-margin
+    %hr
     .form-group.house-input-margin
       = f.simple_fields_for :nearest_stations do |nearest_stations|
         %h2 #{t('nearest_station.header') + (nearest_stations.index + 1).to_s }
