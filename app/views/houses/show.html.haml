@@ -1,0 +1,26 @@
+%p#notice= notice
+.house-show
+  %strong
+    = "#{t('house.name')}："
+  = @house.name
+.house-show
+  %strong
+    = "#{t('house.rent')}："
+  = number_to_currency(@house.rent, unit:t('rent.unit'), locate:'ja')
+.house-show
+  %strong
+    = "#{t('house.address')}："
+  = @house.address
+.house-show
+  %strong
+    = "#{t('house.age')}"
+  = number_to_currency(@house.age, unit:t('age.unit'), locate:'ja')
+.house-show
+  %strong
+    = "#{t('house.remark')}"
+  = @house.remark
+
+.house-show
+  = link_to '編集', edit_house_path(@house)
+  \|
+  = link_to '戻る', houses_path

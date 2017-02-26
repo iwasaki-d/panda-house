@@ -1,0 +1,18 @@
+= simple_form_for @house, html: {class: 'form-inline'} do |f|
+  = f.error_notification
+
+  .form-inputs
+    .form-group.house-input-group
+      = f.input :name, label: t('house.name')
+    .form-group.house-input-group
+      = f.input :rent, as: :integer, label: t('house.rent'), input_html:{ class: 'house-input-field'}
+      = t('rent.unit')
+    .form-group.house-input-group
+      = f.input :address, label: t('house.address')
+    .form-group.house-input-group
+      = f.input :age, as: :integer, label: t('house.age'), input_html:{ class: 'house-input-field'}
+      = t('age.unit')
+    .form-group.house-input-group
+      = f.input :remark, as: :text, label: t('house.remark')
+  .form-actions
+    = f.button :submit, '登録する'

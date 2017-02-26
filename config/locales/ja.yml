@@ -1,0 +1,17 @@
+ja:
+  house:
+    name: '物件名'
+    rent: '賃料'
+    address: '住所'
+    age: '築年数'
+    remark: '備考'
+  rent:
+    unit: '円'
+  age:
+    unit: '年'
+  number:
+    currency:
+      format:
+        format: '%n%u'
+        negative_format: '-%n%u'
+        precision: 0

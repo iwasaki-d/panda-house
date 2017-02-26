@@ -1,0 +1,39 @@
+// Place all the styles related to the houses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.house-table {
+  width: 100%;
+}
+
+.house-td-name {
+  width: 4em;
+}
+
+.house-td-rent {
+  width: 4em;
+}
+
+.house-td-address {
+  width: 7em;
+}
+
+.house-td-age {
+  width: 2em;
+}
+
+.house-td-link {
+  width: 1em;
+}
+
+.house-show {
+  margin-top: 20px;
+}
+
+.house-input-group {
+  margin-top: 10px;
+  clear: both;
+}
+
+.house-input-field {
+  float: left;
+}
