@@ -1,26 +1,42 @@
 %p#notice= notice
-.house-show
+.house-detail
   %strong
     = "#{t('house.name')}："
   = @house.name
-.house-show
+.house-detail
   %strong
     = "#{t('house.rent')}："
   = number_to_currency(@house.rent, unit:t('rent.unit'), locate:'ja')
-.house-show
+.house-detail
   %strong
     = "#{t('house.address')}："
   = @house.address
-.house-show
+.house-detail
   %strong
     = "#{t('house.age')}"
   = number_to_currency(@house.age, unit:t('age.unit'), locate:'ja')
-.house-show
+.house-detail
   %strong
     = "#{t('house.remark')}"
   = @house.remark
-
-.house-show
+%hr.house-detail
+  - @house.nearest_stations.each_with_index do |nearest_station, index|
+    .nearest-station-header
+      = "#{t('nearest_station.header') + (index+1).to_s}"
+    .nearest-station-detail
+      %strong
+        = "#{t('nearest_station.line_name')}"
+      = nearest_station.line_name
+    .nearest-station-detail
+      %strong
+        = "#{t('nearest_station.station_name')}"
+      = nearest_station.station_name
+    .nearest-station-detail
+      %strong
+        = "#{t('nearest_station.minutes_walk.label')}"
+      = nearest_station.minutes_walk
+      = "#{t('nearest_station.minutes_walk.unit')}"
+.house-detail-margin
   = link_to '編集', edit_house_path(@house)
   \|
   = link_to '戻る', houses_path

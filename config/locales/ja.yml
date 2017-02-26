@@ -5,6 +5,13 @@ ja:
     address: '住所'
     age: '築年数'
     remark: '備考'
+  nearest_station:
+    header: '最寄り駅'
+    line_name: '路線名'
+    station_name: '駅名'
+    minutes_walk:
+      label: '徒歩分数'
+      unit: '分'
   rent:
     unit: '円'
   age:

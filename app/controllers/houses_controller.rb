@@ -10,6 +10,8 @@ class HousesController < ApplicationController
 
   def new
     @house = House.new
+    # 登録フォーム表示のために最寄駅オブジェクトをbuildする
+    @house.set_nearest_stations
   end
 
   def edit
@@ -19,7 +21,7 @@ class HousesController < ApplicationController
     @house = House.new(house_params)
 
     if @house.save
-      redirect_to @house, notice: 'House was successfully created.'
+      redirect_to @house, notice: '物件情報の登録に成功しました。'
     else
       render :new
     end
@@ -27,7 +29,7 @@ class HousesController < ApplicationController
 
   def update
     if @house.update(house_params)
-      redirect_to @house, notice: 'House was successfully updated.'
+      redirect_to @house, notice: '物件情報の更新に成功しました。'
     else
       render :edit
     end
@@ -35,7 +37,7 @@ class HousesController < ApplicationController
 
   def destroy
     @house.destroy
-    redirect_to houses_url, notice: 'House was successfully destroyed.'
+    redirect_to houses_url, notice: '物件情報の削除に成功しました。'
   end
 
   private
@@ -44,6 +46,7 @@ class HousesController < ApplicationController
   end
 
   def house_params
-    params.require(:house).permit(:name, :address, :rent, :age, :remark)
+    params.require(:house).permit(:name, :address, :rent, :age, :remark,
+                                  nearest_stations_attributes: [:id, :line_name, :station_name, :minutes_walk])
   end
 end

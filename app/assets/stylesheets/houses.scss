@@ -25,15 +25,23 @@
   width: 1em;
 }
 
-.house-show {
-  margin-top: 20px;
+.house-detail {
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
-.house-input-group {
-  margin-top: 10px;
+.house-detail-margin {
+  margin-bottom: 10px;
+}
+
+.house-input-margin {
+  margin-bottom: 10px;
+}
+
+.house-input-clear {
   clear: both;
 }
 
-.house-input-field {
+.house-input-required-unit-field {
   float: left;
 }
