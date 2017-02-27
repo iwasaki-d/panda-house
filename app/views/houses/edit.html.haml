@@ -1,0 +1,8 @@
+%h1 物件編集
+
+= render 'form'
+
+.house-input-margin
+  = link_to t('operation.show'), @house
+  \|
+  = link_to t('operation.back'), houses_path

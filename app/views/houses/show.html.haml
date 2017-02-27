@@ -1,0 +1,42 @@
+%p#notice= notice
+.house-detail
+  %strong
+    = "#{t('house.name')}:"
+  = @house.name
+.house-detail
+  %strong
+    = "#{t('house.rent')}:"
+  = number_to_currency(@house.rent, unit:t('rent.unit'), locate:'ja')
+.house-detail
+  %strong
+    = "#{t('house.address')}:"
+  = @house.address
+.house-detail
+  %strong
+    = "#{t('house.age')}"
+  = number_to_currency(@house.age, unit:t('age.unit'), locate:'ja')
+.house-detail
+  %strong
+    = "#{t('house.remark')}"
+  = @house.remark
+%hr.nearest-station-delimiter
+  - @house.nearest_stations.each_with_index do |nearest_station, index|
+    .nearest-station-header
+      = "#{t('nearest_station.header') + (index+1).to_s}"
+    .nearest-station-detail
+      %strong
+        = "#{t('nearest_station.line_name')}"
+      = nearest_station.line_name
+    .nearest-station-detail
+      %strong
+        = "#{t('nearest_station.station_name')}"
+      = nearest_station.station_name
+    .nearest-station-detail
+      %strong
+        = "#{t('nearest_station.minutes_walk.label')}"
+      = nearest_station.minutes_walk
+      = "#{t('nearest_station.minutes_walk.unit')}"
+.house-detail-margin
+  = link_to t('operation.edit'), edit_house_path(@house)
+  \|
+  = link_to t('operation.back'), houses_path

@@ -1,0 +1,34 @@
+%h1 物件一覧
+%p#notice= notice
+%table.house-table
+  %thead
+    %tr
+      %th
+        = t('house.name')
+      %th
+        = t('house.rent')
+      %th
+        = t('house.address')
+      %th
+        = t('house.age')
+      %th
+        = t('house.remark')
+      %th
+      %th
+      %th
+
+  %tbody
+    - @houses.each do |house|
+      %tr
+        %td.house-td-name= house.name
+        %td.house-td-rent=number_to_currency(house.rent, unit:t('rent.unit'), locale:'ja')
+        %td.house-td-address= house.address
+        %td.house-td-age= number_to_currency(house.age, unit:t('age.unit'), locale:'ja')
+        %td= house.remark
+        %td.house-td-link= link_to t('operation.show'), house
+        %td.house-td-link= link_to t('operation.edit'), edit_house_path(house)
+        %td.house-td-link= link_to t('operation.delete'), house, :method => :delete, :data => { :confirm => '選択物件を削除してよろしいですか？' }
+
+%br
+
+= link_to '物件を登録する', new_house_path
