@@ -1,15 +1,15 @@
 %p#notice= notice
 .house-detail
   %strong
-    = "#{t('house.name')}："
+    = "#{t('house.name')}:"
   = @house.name
 .house-detail
   %strong
-    = "#{t('house.rent')}："
+    = "#{t('house.rent')}:"
   = number_to_currency(@house.rent, unit:t('rent.unit'), locate:'ja')
 .house-detail
   %strong
-    = "#{t('house.address')}："
+    = "#{t('house.address')}:"
   = @house.address
 .house-detail
   %strong
@@ -37,6 +37,6 @@
       = nearest_station.minutes_walk
       = "#{t('nearest_station.minutes_walk.unit')}"
 .house-detail-margin
-  = link_to '編集', edit_house_path(@house)
+  = link_to t('operation.edit'), edit_house_path(@house)
   \|
-  = link_to '戻る', houses_path
+  = link_to t('operation.back'), houses_path

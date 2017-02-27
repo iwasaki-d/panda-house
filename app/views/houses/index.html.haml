@@ -25,9 +25,9 @@
         %td.house-td-address= house.address
         %td.house-td-age= number_to_currency(house.age, unit:t('age.unit'), locale:'ja')
         %td= house.remark
-        %td.house-td-link= link_to '詳細', house
-        %td.house-td-link= link_to '編集', edit_house_path(house)
-        %td.house-td-link= link_to '削除', house, :method => :delete, :data => { :confirm => '選択物件を削除してよろしいですか？' }
+        %td.house-td-link= link_to t('operation.show'), house
+        %td.house-td-link= link_to t('operation.edit'), edit_house_path(house)
+        %td.house-td-link= link_to t('operation.delete'), house, :method => :delete, :data => { :confirm => '選択物件を削除してよろしいですか？' }
 
 %br
 

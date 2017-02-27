@@ -1,10 +1,33 @@
 en:
+  activerecord:
+    errors:
+      messages:
+        blank: 'input required.'
+        greater_than_or_equal_to: 'enter a value of 0 or more.'
+        not_an_integer: 'enter an integer.'
+        not_a_number: 'enter a number.'
+  helpers:
+    submit:
+      create: 'create'
+      update: 'update'
+  operation:
+    edit: 'edit'
+    show: 'show'
+    delete: 'delete'
+    back: 'back'
   house:
     name: 'name'
     rent: 'rent'
     address: 'address'
     age: 'age'
     remark: 'remark'
+  nearest_station:
+    header: 'nearest station'
+    line_name: 'line name'
+    station_name: 'station name'
+    minutes_walk:
+      label: 'minute''s walk'
+      unit: 'minutes'
   rent:
     unit: 'yen'
   age:
