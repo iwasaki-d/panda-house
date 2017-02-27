@@ -2,15 +2,15 @@
   = f.error_notification
   .form-inputs
     .form-group.house-input-margin
-      = f.input :name, label: t('house.name')
+      = f.input :name, label: t('house.name'), required: false
     .form-group.house-input-margin
-      = f.input :rent, as: :integer, label: t('house.rent'), input_html:{ class: 'house-input-required-unit-field'}
+      = f.input :rent, as: :integer, label: t('house.rent'), input_html:{class: 'house-input-required-unit-field'}
       = t('rent.unit')
       .house-input-clear
     .form-group.house-input-margin
-      = f.input :address, label: t('house.address')
+      = f.input :address, label: t('house.address'), required: false
     .form-group.house-input-margin
-      = f.input :age, as: :integer, label: t('house.age'), input_html:{ class: 'house-input-required-unit-field'}
+      = f.input :age, as: :integer, label: t('house.age'), input_html:{class: 'house-input-required-unit-field'}
       = t('age.unit')
       .house-input-clear
     .form-group.house-input-margin
@@ -21,12 +21,12 @@
         %h2 #{t('nearest_station.header') + (nearest_stations.index + 1).to_s }
         = nearest_stations.hidden_field :id
         .form-group.house-input-margin
-          = nearest_stations.input :line_name, label: t('nearest_station.line_name')
+          = nearest_stations.input :line_name, label: t('nearest_station.line_name'), required: false
         .form-group.house-input-margin
-          = nearest_stations.input :station_name, label: t('nearest_station.station_name')
+          = nearest_stations.input :station_name, label: t('nearest_station.station_name'), required: false
         .form-group.house-input-margin
           = nearest_stations.input :minutes_walk, label: t('nearest_station.minutes_walk.label'), input_html:{ class: 'house-input-required-unit-field'}
           = t('nearest_station.minutes_walk.unit')
           .house-input-clear
   .form-actions.house-input-clear.house-input-margin
-    = f.button :submit, '登録する'
+    = f.button :submit
