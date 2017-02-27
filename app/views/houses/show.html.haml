@@ -19,7 +19,7 @@
   %strong
     = "#{t('house.remark')}"
   = @house.remark
-%hr.nearest-station-delmiter
+%hr.nearest-station-delimiter
   - @house.nearest_stations.each_with_index do |nearest_station, index|
     .nearest-station-header
       = "#{t('nearest_station.header') + (index+1).to_s}"
